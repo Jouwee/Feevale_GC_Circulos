@@ -34,15 +34,15 @@ public class Circulo {
     
     private List<Ponto> getOctantes(Ponto ponto) {
         List<Ponto> pontos = new ArrayList<>();
-        double relX = ponto.x - centro.x;
-        double relY = ponto.y - centro.y;
+        double relX = Math.abs(ponto.x - centro.x);
+        double relY = Math.abs(ponto.y - centro.y);
         pontos.add(new Ponto(centro.x + relX, centro.y - relY, COR_OCT[0]));
         pontos.add(new Ponto(centro.x - relX, centro.y + relY, COR_OCT[1]));
         pontos.add(new Ponto(centro.x - relX, centro.y - relY, COR_OCT[2]));
-        pontos.add(new Ponto(centro.y + relY, centro.x + relX, COR_OCT[3]));
-        pontos.add(new Ponto(centro.y + relY, centro.x - relX, COR_OCT[4]));
-        pontos.add(new Ponto(centro.y - relY, centro.x + relX, COR_OCT[5]));
-        pontos.add(new Ponto(centro.y - relY, centro.x - relX, COR_OCT[6]));
+        pontos.add(new Ponto(centro.x + relY, centro.y + relX, COR_OCT[3]));
+        pontos.add(new Ponto(centro.x + relY, centro.y - relX, COR_OCT[4]));
+        pontos.add(new Ponto(centro.x - relY, centro.y + relX, COR_OCT[5]));
+        pontos.add(new Ponto(centro.x - relY, centro.y - relX, COR_OCT[6]));
         return pontos;
     }
     
